@@ -1,0 +1,14 @@
+C:\Users\nahasan\source\repos\WAK-Demo\WAK_Session_01\WAK_Session_01_WebApp\bin\Release\netcoreapp2.1\WAK_Session_01_WebApp.deps.json
+C:\Users\nahasan\source\repos\WAK-Demo\WAK_Session_01\WAK_Session_01_WebApp\bin\Release\netcoreapp2.1\WAK_Session_01_WebApp.runtimeconfig.json
+C:\Users\nahasan\source\repos\WAK-Demo\WAK_Session_01\WAK_Session_01_WebApp\bin\Release\netcoreapp2.1\WAK_Session_01_WebApp.runtimeconfig.dev.json
+C:\Users\nahasan\source\repos\WAK-Demo\WAK_Session_01\WAK_Session_01_WebApp\bin\Release\netcoreapp2.1\WAK_Session_01_WebApp.dll
+C:\Users\nahasan\source\repos\WAK-Demo\WAK_Session_01\WAK_Session_01_WebApp\bin\Release\netcoreapp2.1\WAK_Session_01_WebApp.pdb
+C:\Users\nahasan\source\repos\WAK-Demo\WAK_Session_01\WAK_Session_01_WebApp\obj\Release\netcoreapp2.1\WAK_Session_01_WebApp.csprojAssemblyReference.cache
+C:\Users\nahasan\source\repos\WAK-Demo\WAK_Session_01\WAK_Session_01_WebApp\obj\Release\netcoreapp2.1\WAK_Session_01_WebApp.csproj.CoreCompileInputs.cache
+C:\Users\nahasan\source\repos\WAK-Demo\WAK_Session_01\WAK_Session_01_WebApp\obj\Release\netcoreapp2.1\WAK_Session_01_WebApp.RazorAssemblyInfo.cache
+C:\Users\nahasan\source\repos\WAK-Demo\WAK_Session_01\WAK_Session_01_WebApp\obj\Release\netcoreapp2.1\WAK_Session_01_WebApp.RazorAssemblyInfo.cs
+C:\Users\nahasan\source\repos\WAK-Demo\WAK_Session_01\WAK_Session_01_WebApp\obj\Release\netcoreapp2.1\WAK_Session_01_WebApp.AssemblyInfoInputs.cache
+C:\Users\nahasan\source\repos\WAK-Demo\WAK_Session_01\WAK_Session_01_WebApp\obj\Release\netcoreapp2.1\WAK_Session_01_WebApp.AssemblyInfo.cs
+C:\Users\nahasan\source\repos\WAK-Demo\WAK_Session_01\WAK_Session_01_WebApp\obj\Release\netcoreapp2.1\WAK_Session_01_WebApp.RazorTargetAssemblyInfo.cache
+C:\Users\nahasan\source\repos\WAK-Demo\WAK_Session_01\WAK_Session_01_WebApp\obj\Release\netcoreapp2.1\WAK_Session_01_WebApp.dll
+C:\Users\nahasan\source\repos\WAK-Demo\WAK_Session_01\WAK_Session_01_WebApp\obj\Release\netcoreapp2.1\WAK_Session_01_WebApp.pdb

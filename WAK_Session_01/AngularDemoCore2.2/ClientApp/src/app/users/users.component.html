@@ -1,0 +1,24 @@
+<h3>Showing Users</h3>
+
+<p *ngIf="!users"><em>Loading...</em></p>
+
+<table class='table table-striped' *ngIf="users">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Account Number</th>
+      <th>Address</th>
+      <th>Email</th>
+      <th>Phone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users" [routerLinkActive]='["link-active"]'>
+      <td><a [routerLink]='["/transactions", user.accountNumber]'>{{ user.name }}</a></td>
+      <td>{{ user.accountNumber }}</td>
+      <td>{{ user.address }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.phone }}</td>
+    </tr>
+  </tbody>
+</table>

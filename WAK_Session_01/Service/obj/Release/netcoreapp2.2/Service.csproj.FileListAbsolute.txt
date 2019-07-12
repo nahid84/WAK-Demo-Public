@@ -1,0 +1,12 @@
+C:\Users\nahasan\source\repos\WAK-Demo\WAK_Session_01\Service\bin\Release\netcoreapp2.2\Service.deps.json
+C:\Users\nahasan\source\repos\WAK-Demo\WAK_Session_01\Service\bin\Release\netcoreapp2.2\Service.dll
+C:\Users\nahasan\source\repos\WAK-Demo\WAK_Session_01\Service\bin\Release\netcoreapp2.2\Service.pdb
+C:\Users\nahasan\source\repos\WAK-Demo\WAK_Session_01\Service\bin\Release\netcoreapp2.2\DataAccess.dll
+C:\Users\nahasan\source\repos\WAK-Demo\WAK_Session_01\Service\bin\Release\netcoreapp2.2\DataAccess.pdb
+C:\Users\nahasan\source\repos\WAK-Demo\WAK_Session_01\Service\obj\Release\netcoreapp2.2\Service.csprojAssemblyReference.cache
+C:\Users\nahasan\source\repos\WAK-Demo\WAK_Session_01\Service\obj\Release\netcoreapp2.2\Service.csproj.CoreCompileInputs.cache
+C:\Users\nahasan\source\repos\WAK-Demo\WAK_Session_01\Service\obj\Release\netcoreapp2.2\Service.AssemblyInfoInputs.cache
+C:\Users\nahasan\source\repos\WAK-Demo\WAK_Session_01\Service\obj\Release\netcoreapp2.2\Service.AssemblyInfo.cs
+C:\Users\nahasan\source\repos\WAK-Demo\WAK_Session_01\Service\obj\Release\netcoreapp2.2\Service.csproj.CopyComplete
+C:\Users\nahasan\source\repos\WAK-Demo\WAK_Session_01\Service\obj\Release\netcoreapp2.2\Service.dll
+C:\Users\nahasan\source\repos\WAK-Demo\WAK_Session_01\Service\obj\Release\netcoreapp2.2\Service.pdb

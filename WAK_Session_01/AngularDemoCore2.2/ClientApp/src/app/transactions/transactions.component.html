@@ -1,0 +1,18 @@
+<h3>Showing Transactions</h3>
+
+<p *ngIf="!transactions"><em>Loading...</em></p>
+
+<table class='table table-striped' *ngIf="transactions">
+  <thead>
+    <tr>
+      <th>Amount</th>
+      <th>Debit/Credit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let transaction of transactions">
+      <td>{{ transaction.amount }}</td>
+      <td>{{ transaction.operation }}</td>
+    </tr>
+  </tbody>
+</table>
