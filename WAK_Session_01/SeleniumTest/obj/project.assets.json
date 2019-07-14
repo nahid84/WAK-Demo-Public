@@ -5809,11 +5809,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nahasan\\source\\repos\\WAK-Demo\\WAK_Session_01\\SeleniumTest\\SeleniumTest.csproj",
+      "projectUniqueName": "C:\\Users\\nahasan\\source\\repos\\WAK-Demo-Public\\WAK_Session_01\\SeleniumTest\\SeleniumTest.csproj",
       "projectName": "SeleniumTest",
-      "projectPath": "C:\\Users\\nahasan\\source\\repos\\WAK-Demo\\WAK_Session_01\\SeleniumTest\\SeleniumTest.csproj",
+      "projectPath": "C:\\Users\\nahasan\\source\\repos\\WAK-Demo-Public\\WAK_Session_01\\SeleniumTest\\SeleniumTest.csproj",
       "packagesPath": "C:\\Users\\nahasan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nahasan\\source\\repos\\WAK-Demo\\WAK_Session_01\\SeleniumTest\\obj\\",
+      "outputPath": "C:\\Users\\nahasan\\source\\repos\\WAK-Demo-Public\\WAK_Session_01\\SeleniumTest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

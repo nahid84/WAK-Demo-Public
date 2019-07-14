@@ -3585,11 +3585,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nahasan\\source\\repos\\WAK-Demo\\WAK_Session_01\\DataAccess\\DataAccess.csproj",
+      "projectUniqueName": "C:\\Users\\nahasan\\source\\repos\\WAK-Demo-Public\\WAK_Session_01\\DataAccess\\DataAccess.csproj",
       "projectName": "DataAccess",
-      "projectPath": "C:\\Users\\nahasan\\source\\repos\\WAK-Demo\\WAK_Session_01\\DataAccess\\DataAccess.csproj",
+      "projectPath": "C:\\Users\\nahasan\\source\\repos\\WAK-Demo-Public\\WAK_Session_01\\DataAccess\\DataAccess.csproj",
       "packagesPath": "C:\\Users\\nahasan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nahasan\\source\\repos\\WAK-Demo\\WAK_Session_01\\DataAccess\\obj\\",
+      "outputPath": "C:\\Users\\nahasan\\source\\repos\\WAK-Demo-Public\\WAK_Session_01\\DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

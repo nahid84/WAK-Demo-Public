@@ -1,60 +1,69 @@
 using DataAccess;
-using DataAccess.Models;
 using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
-using Moq;
 using NUnit.Framework;
 using Service;
+using Service.DTOs;
+using Service.UnitTests.Extensions;
 using Service.UnitTests.TestData;
-using System.Linq;
 
 namespace UsersServiceTest
 {
     public class Tests
     {
-        private Mock<DbSet<Users>> mockUsersSet;
-        private Mock<DemoDBContext> mockDbContext;
+        private DemoDBContext dbContext;
         private UsersService usersService;
 
-        [OneTimeSetUp]
+        [SetUp]
         public void InitTest()
         {
-            mockDbContext = new Mock<DemoDBContext>();
-            usersService = new UsersService(mockDbContext.Object);
+            var options = new DbContextOptionsBuilder<DemoDBContext>()
+                .UseInMemoryDatabase(databaseName: "WAK_Demo_DB")
+                .Options;
+
+            dbContext = new DemoDBContext(options);
+            dbContext.ResetValueGenerators();
+            dbContext.Database.EnsureDeleted();
+
+            usersService = new UsersService(dbContext);
         }
 
-        [OneTimeTearDown]
+        [TearDown]
         public void CloseTest()
         {
-            usersService = null;
-            mockDbContext = null;
-        }
-
-        [SetUp]
-        public void Setup()
-        {
-            mockUsersSet = new Mock<DbSet<Users>>();
-
-            mockUsersSet.As<IQueryable<Users>>().Setup(m => m.Provider)
-                                                .Returns(UsersData.Entries.AsQueryable().Provider);
-            mockUsersSet.As<IQueryable<Users>>().Setup(m => m.Expression)
-                                                .Returns(UsersData.Entries.AsQueryable().Expression);
-            mockUsersSet.As<IQueryable<Users>>().Setup(m => m.ElementType)
-                                                .Returns(UsersData.Entries.AsQueryable().ElementType);
-            mockUsersSet.As<IQueryable<Users>>().Setup(m => m.GetEnumerator())
-                                                .Returns(UsersData.Entries.AsQueryable().GetEnumerator());
-
+            dbContext.Dispose();
+            dbContext = null;
         }
 
         [Test]
+        [Order(1)]
         public void GetAllUsers_Returns_Users()
         {
-            mockDbContext.SetupGet(x => x.Users)
-                         .Returns(mockUsersSet.Object);
+            dbContext.AddRange(UsersData.Entries);
+            dbContext.SaveChanges();
 
             var users = usersService.GetAllUsers();
 
             users.Should().HaveCount(3);
+        }
+
+        [Test]
+        [Order(2)]
+        public void CreateUser_Can_Add_User()
+        {
+            usersService.CreateUser(new User
+            {
+                FirstName = "Wahid",
+                LastName = "Hasan",
+                AccountNumber = "NL09123999",
+                Address = "Zonnbloemstraat 10",
+                City = "Nieuwegein",
+                Email = "nahid.hasan@capgemini.com",
+                Phone = "06161170999",
+                Postcode = "3434VB"
+            });
+
+            dbContext.Users.Should().HaveCount(1);
         }
     }
 }

@@ -11803,11 +11803,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nahasan\\source\\repos\\WAK-Demo\\WAK_Session_01\\WAK_Session_01_WebApp\\WAK_Session_01_WebApp.csproj",
+      "projectUniqueName": "C:\\Users\\nahasan\\source\\repos\\WAK-Demo-Public\\WAK_Session_01\\WAK_Session_01_WebApp\\WAK_Session_01_WebApp.csproj",
       "projectName": "WAK_Session_01_WebApp",
-      "projectPath": "C:\\Users\\nahasan\\source\\repos\\WAK-Demo\\WAK_Session_01\\WAK_Session_01_WebApp\\WAK_Session_01_WebApp.csproj",
+      "projectPath": "C:\\Users\\nahasan\\source\\repos\\WAK-Demo-Public\\WAK_Session_01\\WAK_Session_01_WebApp\\WAK_Session_01_WebApp.csproj",
       "packagesPath": "C:\\Users\\nahasan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nahasan\\source\\repos\\WAK-Demo\\WAK_Session_01\\WAK_Session_01_WebApp\\obj\\",
+      "outputPath": "C:\\Users\\nahasan\\source\\repos\\WAK-Demo-Public\\WAK_Session_01\\WAK_Session_01_WebApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

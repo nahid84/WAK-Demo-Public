@@ -3603,11 +3603,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nahasan\\source\\repos\\WAK-Demo\\WAK_Session_01\\Service\\Service.csproj",
+      "projectUniqueName": "C:\\Users\\nahasan\\source\\repos\\WAK-Demo-Public\\WAK_Session_01\\Service\\Service.csproj",
       "projectName": "Service",
-      "projectPath": "C:\\Users\\nahasan\\source\\repos\\WAK-Demo\\WAK_Session_01\\Service\\Service.csproj",
+      "projectPath": "C:\\Users\\nahasan\\source\\repos\\WAK-Demo-Public\\WAK_Session_01\\Service\\Service.csproj",
       "packagesPath": "C:\\Users\\nahasan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nahasan\\source\\repos\\WAK-Demo\\WAK_Session_01\\Service\\obj\\",
+      "outputPath": "C:\\Users\\nahasan\\source\\repos\\WAK-Demo-Public\\WAK_Session_01\\Service\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -3626,8 +3626,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\nahasan\\source\\repos\\WAK-Demo\\WAK_Session_01\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "C:\\Users\\nahasan\\source\\repos\\WAK-Demo\\WAK_Session_01\\DataAccess\\DataAccess.csproj"
+            "C:\\Users\\nahasan\\source\\repos\\WAK-Demo-Public\\WAK_Session_01\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "C:\\Users\\nahasan\\source\\repos\\WAK-Demo-Public\\WAK_Session_01\\DataAccess\\DataAccess.csproj"
             }
           }
         }
