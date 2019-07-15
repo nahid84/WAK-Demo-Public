@@ -10,6 +10,14 @@ using Service;
 
 namespace AngularDemoCore2._2
 {
+    class AzureDBConnectionSettings
+    {
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public string Server { get; set; }
+        public string Port { get; set; }
+    }
+
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -30,7 +38,9 @@ namespace AngularDemoCore2._2
                 configuration.RootPath = "ClientApp/dist";
             });
 
-            string connectionString = "";
+            AzureDBConnectionSettings connSettings = Configuration.GetSection("AzureDBConnectionSettings")
+                                                                  .Get<AzureDBConnectionSettings>();
+            string connectionString = $"Server = tcp:{connSettings.Server},{connSettings.Port}; Initial Catalog = demo; Persist Security Info = False; User ID = {connSettings.Username}; Password = {connSettings.Password}; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;";
             
             services.AddDbContext<DemoDBContext>(options =>
             {
