@@ -116,6 +116,100 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Create a user")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Users")]
+        public virtual void CreateAUser()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a user", null, ((string[])(null)));
+#line 15
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 16
+ testRunner.Given("Api is up and running to create user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Key",
+                        "Value"});
+            table3.AddRow(new string[] {
+                        "FirstName",
+                        "IntegrationTest_User_F01"});
+            table3.AddRow(new string[] {
+                        "LastName",
+                        "L01"});
+            table3.AddRow(new string[] {
+                        "Address",
+                        "Volgelwikke 10"});
+            table3.AddRow(new string[] {
+                        "Postcode",
+                        "3434EH"});
+            table3.AddRow(new string[] {
+                        "City",
+                        "Nieuwegein"});
+            table3.AddRow(new string[] {
+                        "AccountNumber",
+                        "NL01ABNA23456789"});
+            table3.AddRow(new string[] {
+                        "Email",
+                        "nahid@email.com"});
+            table3.AddRow(new string[] {
+                        "Phone",
+                        "0616170697"});
+#line 17
+ testRunner.When("User creation requested by information", ((string)(null)), table3, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Key",
+                        "Value"});
+            table4.AddRow(new string[] {
+                        "FirstName",
+                        "IntegrationTest_User_F01"});
+            table4.AddRow(new string[] {
+                        "LastName",
+                        "L01"});
+            table4.AddRow(new string[] {
+                        "Address",
+                        "Volgelwikke 10"});
+            table4.AddRow(new string[] {
+                        "Postcode",
+                        "3434EH"});
+            table4.AddRow(new string[] {
+                        "City",
+                        "Nieuwegein"});
+            table4.AddRow(new string[] {
+                        "AccountNumber",
+                        "NL01ABNA23456789"});
+            table4.AddRow(new string[] {
+                        "Email",
+                        "nahid@email.com"});
+            table4.AddRow(new string[] {
+                        "Phone",
+                        "0616170697"});
+#line 27
+ testRunner.Then("User gets created by information", ((string)(null)), table4, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Delete a user")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Users")]
+        public virtual void DeleteAUser()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delete a user", null, ((string[])(null)));
+#line 38
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 39
+ testRunner.Given("Api is up and running to delete user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 40
+ testRunner.When("User deletion requested by accountNumber NL01ABNA23456789", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 41
+ testRunner.Then("User gets deleted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore
