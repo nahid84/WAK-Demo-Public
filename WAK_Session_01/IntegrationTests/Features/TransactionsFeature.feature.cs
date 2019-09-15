@@ -90,16 +90,16 @@ namespace IntegrationTests.Features
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Show all transactions for a user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "TransactionsFeature")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Transactionstag")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("transactionstag")]
         public virtual void ShowAllTransactionsForAUser()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Show all transactions for a user", null, new string[] {
-                        "Transactionstag"});
+                        "transactionstag"});
 #line 5
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 6
- testRunner.Given("Api is up and running for Transactions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("Api is up and running for transaction test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 7
  testRunner.When("Transaction requested by accountnumber NL09ABNA1111112234", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden

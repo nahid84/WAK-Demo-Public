@@ -21,7 +21,7 @@ namespace IntegrationTests.Steps
             this.factory = factory;
         }
 
-        [Given(@"Api is up and running")]
+        [Given(@"Api is up and running for user test")]
         public void GivenApiIsUpAndRunning()
         {
             client = factory.CreateClient(new WebApplicationFactoryClientOptions

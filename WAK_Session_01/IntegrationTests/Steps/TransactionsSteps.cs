@@ -21,7 +21,7 @@ namespace IntegrationTests.Steps
             this.factory = factory;
         }
 
-        [Given(@"Api is up and running for Transactions")]
+        [Given(@"Api is up and running for transaction test")]
         public void GivenApiIsUpAndRunning()
         {
             client = factory.CreateClient(new WebApplicationFactoryClientOptions
