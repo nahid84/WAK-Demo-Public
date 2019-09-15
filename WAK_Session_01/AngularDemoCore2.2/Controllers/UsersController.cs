@@ -52,7 +52,19 @@ namespace AngularDemoCore2._2.Controllers
 
             return BadRequest();
         }
+
+        [HttpDelete("{accountNumber}")]
+        public IActionResult DeleteUser([FromRoute] string accountNumber)
+        {
+            bool result = usersService.DeleteUser(accountNumber);
+
+            if (result)
+                return Content($"/api/users/{accountNumber}");
+
+            return BadRequest();
+        }
     }
+
 
     public class ShowUser
     {

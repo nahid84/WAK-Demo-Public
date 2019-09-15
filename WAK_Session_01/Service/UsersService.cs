@@ -1,4 +1,5 @@
 ﻿using DataAccess;
+using DataAccess.Models;
 using Microsoft.EntityFrameworkCore;
 using Service.DTOs;
 using System.Collections.Generic;
@@ -50,6 +51,25 @@ namespace Service
                     Transactions = null
                 });
 
+                opMarker = dbContext.SaveChanges() == 1 ? true : false;
+
+            }
+            catch (DbUpdateException)
+            {
+                opMarker = false;
+            }
+
+            return opMarker;
+        }
+
+        public bool DeleteUser(string accountNumber)
+        {
+            bool opMarker = false;
+
+            try
+            {
+                Users user = dbContext.Users.Where(x => x.AccNo.Equals(accountNumber)).First();
+                dbContext.Users.Remove(user);
                 opMarker = dbContext.SaveChanges() == 1 ? true : false;
 
             }
