@@ -12,20 +12,26 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-- script: dotnet build WAK_Session_01/WAK_Session_01.sln --configuration $(buildConfiguration) -v n
-  displayName: 'dotnet build $(buildConfiguration)'
-
-- task: DotNetCoreCLI@1
-  displayName: pulish
+- task: DotNetCoreCLI@2
+  displayName: build
   inputs:
-    command: publish
-    arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+    command: build
+    projects: 'WAK_Session_01/WAK_Session_01.sln'
+    arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory) --verbosity normal'
     publishWebProjects: true
     zipAfterPublish: true
 
-- task: DotNetCoreCLI@1
+- task: DotNetCoreCLI@2
   inputs:
     command: 'test'
-    projects: '**/*Tests/Service.UnitTests.csproj'
-    arguments: '--configuration $(buildConfiguration)'
+    projects: 'WAK_Session_01/Service.UnitTests.csproj'
+    arguments: '--configuration $(buildConfiguration) --verbosity normal --list-tests'
     testRunTitle: 'Unit Tests'
+
+- task: DotNetCoreCLI@2
+  displayName: pulish
+  inputs:
+    command: publish
+    arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory) --verbosity detailed'
+    publishWebProjects: true
+    zipAfterPublish: true
