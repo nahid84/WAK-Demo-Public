@@ -39,5 +39,13 @@ namespace IntegrationTests.Steps
         {
             Assert.AreEqual(System.Net.HttpStatusCode.OK, response.StatusCode);
         }
+
+        [Then(@"AccountNumber (.*) does not exists")]
+        public void ThenUserGetsDeleted(string accountNumber)
+        {
+            response = client.GetAsync($"/api/users/{accountNumber}").Result;
+
+            Assert.AreEqual(System.Net.HttpStatusCode.NotFound, response.StatusCode);
+        }
     }
 }

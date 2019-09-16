@@ -1,14 +1,15 @@
 ﻿using AngularDemoCore2._2;
 using AngularDemoCore2._2.Controllers;
 using Microsoft.AspNetCore.Mvc.Testing;
-using System;
-using System.Net.Http;
-using TechTalk.SpecFlow;
-using System.Linq;
-using Newtonsoft.Json;
-using System.Net.Http.Formatting;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Collections.Generic;
+using System.Dynamic;
+using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Formatting;
+using System.Reflection;
+using TechTalk.SpecFlow;
 
 namespace IntegrationTests.Steps
 {
@@ -37,24 +38,16 @@ namespace IntegrationTests.Steps
         public void WhenUserCreationRequestedByInformation(Table table)
         {
             CreateUser user = new CreateUser();
-            user.FirstName = table.Rows.Where(x => x.Values.First().Equals("FirstName"))
-                                        .Select(x => x.Values.Last()).First();
-            user.LastName = table.Rows.Where(x => x.Values.First().Equals("LastName"))
-                            .Select(x => x.Values.Last()).First();
-            user.Address = table.Rows.Where(x => x.Values.First().Equals("Address"))
-                            .Select(x => x.Values.Last()).First();
-            user.Postcode = table.Rows.Where(x => x.Values.First().Equals("Postcode"))
-                            .Select(x => x.Values.Last()).First();
-            user.City = table.Rows.Where(x => x.Values.First().Equals("City"))
-                            .Select(x => x.Values.Last()).First();
-            user.AccountNumber = table.Rows.Where(x => x.Values.First().Equals("AccountNumber"))
-                            .Select(x => x.Values.Last()).First();
-            user.Email = table.Rows.Where(x => x.Values.First().Equals("Email"))
-                            .Select(x => x.Values.Last()).First();
-            user.Phone = table.Rows.Where(x => x.Values.First().Equals("Phone"))
-                            .Select(x => x.Values.Last()).First();
 
-            response = client.PostAsync("/api/users", new ObjectContent(typeof(CreateUser),user, new JsonMediaTypeFormatter())).Result;
+            ExpandoObject postObject = new ExpandoObject();
+
+            table.Rows.ToList().ForEach(x =>
+            {
+                postObject.TryAdd(x.Values.First(), x.Values.Last());
+            });
+
+            response = client.PostAsync("/api/users", new ObjectContent(typeof(ExpandoObject), postObject, new JsonMediaTypeFormatter()))
+                             .Result;
         }
         
         [Then(@"User gets created by information")]
@@ -62,15 +55,26 @@ namespace IntegrationTests.Steps
         {
             Assert.AreEqual(System.Net.HttpStatusCode.Created, response.StatusCode);
 
-            dynamic users = response.Content.ReadAsAsync<dynamic>().Result;
+            string accountNumberToFind = table.Rows.Where(x => x.Values.First().Equals("AccountNumber"))
+                                                   .Select(x => x.Values.Last()).First();
 
-            //List<string> expectedUsers = new List<string>();
-            //expectedUsers.AddRange(table.Rows.Select(x => x.Values.First()));
+            response = client.GetAsync($"/api/users/{accountNumberToFind}").Result;
 
-            //foreach (var user in users)
-            //{
-            //    expectedUsers.Exists(x => x == user.name.Value);
-            //}
+            dynamic user = response.Content.ReadAsAsync<dynamic>()
+                                            .Result;
+
+            PropertyInfo[] propsInfo = user.GetType().GetProperties();
+
+            table.Rows.ToList().ForEach(x =>
+            {
+                PropertyInfo propInfo = propsInfo.Where(prop => prop.Name.Equals(x.Values.First()))
+                                                 .FirstOrDefault();
+                if (propInfo != null)
+                {
+                    string value = propInfo.GetValue(user) as string;
+                    Assert.AreEqual(x.Values.Last(), value);
+                }
+            });
         }
     }
 }

@@ -32,6 +32,24 @@ namespace Service
             });
         }
 
+        public User GetUser(string accountNumber)
+        {
+            return dbContext.Users.Where(x => x.AccNo.Equals(accountNumber))
+                                  .DefaultIfEmpty()
+                                  .Select(dbUser => new User
+                                  {
+                                      FirstName = dbUser.Firstname,
+                                      LastName = dbUser.Lastname,
+                                      Address = dbUser.Address,
+                                      City = dbUser.City,
+                                      Email = dbUser.Email,
+                                      Postcode = dbUser.Postcode,
+                                      AccountNumber = dbUser.AccNo,
+                                      Phone = dbUser.Phone
+                                  })
+                                  .First();
+        }
+
         public bool CreateUser(User user)
         {
             bool opMarker = false;

@@ -1,6 +1,7 @@
 ﻿using DataAccess;
 using Microsoft.AspNetCore.Mvc;
 using Service;
+using Service.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +33,24 @@ namespace AngularDemoCore2._2.Controllers
             });
         }
 
+        [HttpGet("{accountNumber}")]
+        public IActionResult SingleUser([FromRoute] string accountNumber)
+        {
+            User userDto = usersService.GetUser(accountNumber);
+
+            if(userDto == null)
+                return NotFound();
+
+            return Ok(new ShowUser
+            {
+                Name = userDto.FullName,
+                Address = userDto.FullAddress,
+                AccountNumber = userDto.AccountNumber,
+                Email = userDto.Email,
+                Phone = userDto.Phone
+            });
+        }
+
         [HttpPost]
         public IActionResult CreateUser([FromBody] CreateUser user)
         {
@@ -47,10 +66,10 @@ namespace AngularDemoCore2._2.Controllers
                 AccountNumber = user.AccountNumber
             });
 
-            if (result)
-                return Created("api/user", user);
+            if (!result)
+                return BadRequest();
 
-            return BadRequest();
+            return Created("api/user", user);
         }
 
         [HttpDelete("{accountNumber}")]
@@ -58,10 +77,10 @@ namespace AngularDemoCore2._2.Controllers
         {
             bool result = usersService.DeleteUser(accountNumber);
 
-            if (result)
-                return Content($"/api/users/{accountNumber}");
+            if (!result)
+                return BadRequest();
 
-            return BadRequest();
+            return Content($"/api/users/{accountNumber}");
         }
     }
 

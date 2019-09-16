@@ -44,7 +44,7 @@ namespace IntegrationTests.Features
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Users", "\tTo check Users are being correctly properly from the database", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Users", "\tTo check Users are being retrieved properly from the database", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -170,13 +170,7 @@ this.ScenarioInitialize(scenarioInfo);
                         "L01"});
             table4.AddRow(new string[] {
                         "Address",
-                        "Volgelwikke 10"});
-            table4.AddRow(new string[] {
-                        "Postcode",
-                        "3434EH"});
-            table4.AddRow(new string[] {
-                        "City",
-                        "Nieuwegein"});
+                        "Volgelwikke 10, 3434EH, Nieuwegein"});
             table4.AddRow(new string[] {
                         "AccountNumber",
                         "NL01ABNA23456789"});
@@ -198,15 +192,17 @@ this.ScenarioInitialize(scenarioInfo);
         public virtual void DeleteAUser()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delete a user", null, ((string[])(null)));
-#line 38
+#line 36
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 39
+#line 37
  testRunner.Given("Api is up and running to delete user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 40
+#line 38
  testRunner.When("User deletion requested by accountNumber NL01ABNA23456789", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 41
+#line 39
  testRunner.Then("User gets deleted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 40
+ testRunner.And("AccountNumber NL01ABNA23456789 does not exists", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
