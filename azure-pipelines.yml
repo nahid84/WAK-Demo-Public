@@ -16,7 +16,7 @@ steps:
   displayName: build
   inputs:
     command: build
-    projects: '**/WAK_Session_01.sln'
+    projects: '**/WAK_Session_01/WAK_Session_01.sln'
     arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory) --verbosity normal'
     publishWebProjects: true
     zipAfterPublish: true
@@ -24,8 +24,8 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'test'
-    projects: '**/Service.UnitTests.csproj'
-    arguments: '--configuration $(buildConfiguration) --verbosity normal --list-tests'
+    projects: '**/WAK_Session_01/Service.UnitTests.csproj'
+    arguments: '--configuration $(buildConfiguration) --list-tests --logger trx --verbosity normal'
     testRunTitle: 'Unit Tests'
 
 - task: DotNetCoreCLI@2
