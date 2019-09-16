@@ -35,3 +35,9 @@ steps:
     arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory) --verbosity detailed'
     publishWebProjects: true
     zipAfterPublish: true
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathToPublish: $(Build.ArtifactStagingDirectory)
+    publishLocation: 'Container'
+    artifactName: drop
