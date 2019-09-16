@@ -22,3 +22,10 @@ steps:
     arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
     publishWebProjects: true
     zipAfterPublish: true
+
+- task: DotNetCoreCLI@1
+  inputs:
+    command: 'test'
+    projects: '**/*Tests/*.csproj'
+    arguments: '--configuration $(buildConfiguration)'
+    testRunTitle: 'Unit Tests'
